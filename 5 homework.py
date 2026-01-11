@@ -1,19 +1,17 @@
 n = int(input())
-def get_fib(n):
-    itog = []
-    if n <= 0:
-        return itog
-    if n == 1:
-        itog.append(0)
-        return itog
-    itog = [0, 1]
-    a = 0
-    b = 1
-    for i in range(n - 2):
-        sleduyushee = a + b
-        itog.append(sleduyushee)
-        a = b
-        b = sleduyushee
-    return itog
-rezultat = get_fib(n)
-print(rezultat)
+
+def fib_rec(k):
+    if k == 0:
+        return 0
+    if k == 1:
+        return 1
+    
+    summa = fib_rec(k - 1) + fib_rec(k - 2)
+    return summa
+
+itog_list = []
+for i in range(n):
+    chislo = fib_rec(i)
+    itog_list.append(chislo)
+
+print(itog_list)
